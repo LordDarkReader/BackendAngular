@@ -22,8 +22,6 @@ import com.czako.app.app.backend.exceptions.ResourceNotFoundException;
 import com.czako.app.app.backend.model.Employee;
 import com.czako.app.app.backend.repository.EmployeeRepository;
 
-import jdk.management.resource.ResourceRequestDeniedException;
-
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
@@ -67,7 +65,7 @@ public class EmployeeController {
 	@DeleteMapping("/employees/{id}")
 	public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long employeeId) throws ResourceNotFoundException{
 		Employee employee = this.employeeRepository.findById(employeeId)
-				.orElseThrow(() -> new ResourceRequestDeniedException(EMPLOYEE_NOT_FOUND + employeeId));
+				.orElseThrow(() -> new ResourceNotFoundException(EMPLOYEE_NOT_FOUND + employeeId));
 
 		this.employeeRepository.delete(employee);
 		Map<String, Boolean> response = new HashMap<>();
