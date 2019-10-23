@@ -1,4 +1,4 @@
-package com.czako.app.app.backend.model;
+package com.czako.app.app.backend.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

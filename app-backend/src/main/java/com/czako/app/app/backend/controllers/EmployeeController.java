@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.czako.app.app.backend.exceptions.ResourceNotFoundException;
-import com.czako.app.app.backend.model.Employee;
+import com.czako.app.app.backend.entity.Employee;
 import com.czako.app.app.backend.repository.EmployeeRepository;
 
 @RestController
